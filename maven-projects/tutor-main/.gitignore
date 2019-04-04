@@ -1,1 +1,5 @@
+# tomcat and maven target folders
 /target/
+# vscode related settings
+.vscode/
+/.vscode

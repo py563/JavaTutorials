@@ -13,8 +13,9 @@ import java.util.List;
 
 public class GetCustomerNameFromDB {
 	public static void main(String[] args) {
+		System.out.println("First 10 Customer names");
 		for (Customers c : first10Customers())
-			System.out.println(c.getCustomerName());
+			System.out.println(c.getCustomerNumber() + ", " + c.getCustomerName());
 	}
 
 	private static List<Customers> first10Customers() {
@@ -30,7 +31,6 @@ public class GetCustomerNameFromDB {
 		try {
 			stmt = con.createStatement();
 			rs = stmt.executeQuery("SELECT customerNumber, customerName FROM customers LIMIT 10");
-			System.out.println("First 10 Customer names");
 			while (rs.next()) {
 				c = new Customers();
 				c.setCustomerNumber(rs.getInt(1));
