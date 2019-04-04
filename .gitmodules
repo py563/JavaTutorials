@@ -1,3 +1,3 @@
 [submodule "maven-projects/tutor-main/LiquorStoreServlet"]
 	path = maven-projects/tutor-main/LiquorStoreServlet
-	url = https://github.com/kasundharmadasa/LiquorStoreServlet.git
+	url = https://github.com/py563/LiquorStoreServlet.git
