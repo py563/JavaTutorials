@@ -4,6 +4,16 @@
 
 <web-app>
   <display-name> EScan Web Application</display-name>
+  <servlet>
+  	<servlet-name>AddAnItem</servlet-name>
+  	<display-name>AddAnItem</display-name>
+  	<description></description>
+  	<servlet-class>ca.sheridan.eshop.controllers.AddAnItem</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddAnItem</servlet-name>
+  	<url-pattern>/AddAnItem</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
   	<welcome-file>index.html</welcome-file>
   	<welcome-file>index.jsp</welcome-file>
