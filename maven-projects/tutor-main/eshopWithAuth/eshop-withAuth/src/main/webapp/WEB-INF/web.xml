@@ -10,9 +10,19 @@
   	<description></description>
   	<servlet-class>ca.sheridan.eshop.controllers.AddAnItem</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>InsertOrder</servlet-name>
+  	<display-name>InsertOrder</display-name>
+  	<description></description>
+  	<servlet-class>ca.sheridan.eshop.controllers.InsertOrder</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>AddAnItem</servlet-name>
   	<url-pattern>/AddAnItem</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InsertOrder</servlet-name>
+  	<url-pattern>/InsertOrder</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
   	<welcome-file>index.html</welcome-file>

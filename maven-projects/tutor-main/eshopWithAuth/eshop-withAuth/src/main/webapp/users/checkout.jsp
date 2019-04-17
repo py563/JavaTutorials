@@ -32,13 +32,35 @@
                   <% }%>
                <tr>
                	<td colspan="3"> <b> Total </b> </td>
-               	<td><%=request.getAttribute("totalAmount")%></td>
+               	<td><%=request.getAttribute("totalAmount")%></span></td>
                </tr>
-              </table>
-             <% }%>	
+               </table>
+             <% }%>
+             <form action="insertOrder" method="post">
+             <table>
+             <tr>
+             <td><label for="custName">Name:</label></td>
+             <td><input type="text" name="custName"></td>
+             </tr>
+             <tr>
+             <td><label for="custEmail">Email:</label></td>
+             <td><input type="email" name="custEmail"></td>
+             </tr>
+             <tr>
+             <td colspan=2><input type="submit" name="submit" value="Confirm Purchase"></td>
+             </tr>
+             <tr>
+             <td colspan=2><input type="submit" name="submit" value="Next Customer"></td>
+             </tr>
+             </table>
+             <input type="hidden" name="totalAmount" value=<%=request.getAttribute("totalAmount")%>>
+             </form>
 		</div>
 		<div>
-			<a href=index.jsp><span>Start Scanning for Next Customer</span></a>
+			<% if((request.getAttribute("msg")!=null) && (request.getAttribute("msg").equals("error"))) { %>
+         	<span style=color:red;>The Purchase for this order cannot be confirmed please try again (or) </span>
+			<br>
+			<% } %>
 		</div>
 	</div>
 <footer>

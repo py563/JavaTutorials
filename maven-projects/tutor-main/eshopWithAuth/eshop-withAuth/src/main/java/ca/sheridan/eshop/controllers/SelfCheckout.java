@@ -25,7 +25,6 @@ public class SelfCheckout extends HttpServlet{
 		OrderService odr = new OrderService();
 		double total = odr.getOrderedItemTotal(items);
 		request.setAttribute("totalAmount", total);
-		session.removeAttribute("scannedItems");
 		request.setAttribute("orderedItems", items);
 		RequestDispatcher view = request.getRequestDispatcher("checkout.jsp");
 		view.include(request, response);

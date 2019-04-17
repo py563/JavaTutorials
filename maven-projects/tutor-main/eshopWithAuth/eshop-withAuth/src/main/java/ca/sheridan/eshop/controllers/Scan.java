@@ -43,6 +43,7 @@ public class Scan extends HttpServlet{
 		{
 			itemsList.add(itemScanned);
 			session.setAttribute("scannedItems", itemsList);
+			request.setAttribute("msg", "success");
 		}
 		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
 		view.include(request, response);

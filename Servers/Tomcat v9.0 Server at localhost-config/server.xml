@@ -85,11 +85,7 @@
         </SSLHostConfig>
     </Connector>
     -->
-    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               maxThreads="150" SSLEnabled="true" 
-           keystoreFile="F:\Tutoring\christopther-sherdian\JavaTutorials\tomcatAuth\selfkeyTomcat" 
-           keystorePass="JavaTutorials"
-           clientAuth="false" sslProtocol="TLS">
+    <Connector SSLEnabled="true" clientAuth="false" keystoreFile="F:\Tutoring\christopther-sherdian\JavaTutorials\tomcatAuth\selfkeyTomcat" keystorePass="JavaTutorials" maxThreads="150" port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol" sslProtocol="TLS">
     </Connector>
     <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
          This connector uses the APR/native implementation which always uses
@@ -140,10 +136,7 @@
              that are performed against this UserDatabase are immediately
              available for use by the Realm.  -->
         <!-- <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/> -->
-        <Realm className="org.apache.catalina.realm.JDBCRealm" driverName="com.mysql.cj.jdbc.Driver" 
-        connectionURL="jdbc:mysql://127.0.0.1:3306/mtp?user=root&amp;password=politics&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" 
-        	userTable="users" userNameCol="user_name" userCredCol="user_pass" 
-        	userRoleTable="user_roles" roleNameCol="role_name"/>
+        <Realm className="org.apache.catalina.realm.JDBCRealm" connectionURL="jdbc:mysql://127.0.0.1:3306/mtp?user=root&amp;password=politics&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" driverName="com.mysql.cj.jdbc.Driver" roleNameCol="role_name" userCredCol="user_pass" userNameCol="user_name" userRoleTable="user_roles" userTable="users"/>
       </Realm>
 
       <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
