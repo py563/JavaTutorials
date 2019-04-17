@@ -1,0 +1,60 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name> EScan Web Application</display-name>
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  	<welcome-file>index.jsp</welcome-file>
+  	<welcome-file>welcome.html</welcome-file>
+  </welcome-file-list>
+  <!--Defines Security Constraint -->
+    <security-constraint>
+        <display-name>Login Constraints</display-name>
+        <web-resource-collection>
+            <web-resource-name>admin protected area</web-resource-name>
+            <description/>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+        <security-constraint>
+        <display-name> User Constraints</display-name>
+        <web-resource-collection>
+            <web-resource-name>users area</web-resource-name>
+            <description/>
+            <url-pattern>/users/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>user</role-name>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+<!--Defines Login Config -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>jdbcRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/loginError.html</form-error-page>
+        </form-login-config>
+    </login-config>
+<!--Defines Security Role -->
+    <security-role>
+        <description/>
+        <role-name>admin</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>user</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>guest</role-name>
+    </security-role>
+</web-app>
